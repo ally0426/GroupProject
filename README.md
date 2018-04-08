@@ -17,11 +17,6 @@
 2. git merge master 
 (This takes any changes from MASTER and merges them BACK TO develop)
 
-# GroupProject Recipe App
-This is our Adventure App for Things to do today
-Saundra Rikki Brandon Joe Thomas
-
-Our Project:
 Enter your zip code or state
 We will find something fun for you to do today
 You'll go do it and have a great time!
@@ -38,7 +33,6 @@ Project Management/Information Architecture: Saundra, Brandon
 
 Front End Captain: Thom
 Bootstrap
-Shoelace to structure the layout: http://shoelace.io/
 Codepen.io for animation and titles
 
 
@@ -52,8 +46,6 @@ Javascript: Joe
 Ajax: 
 API Research: Saundra, Joe
 Database:
- 
-Local Storage to save the recipes for the user
 
 Debugging: ALL 
 

@@ -14,7 +14,7 @@ p {
 
 #pageSubmenu {
     font-family: sans-serif;
-    background: #3FEEE6;
+    background: #FF3900;
     margin-left: 5px;
 
 }
@@ -26,9 +26,9 @@ p {
 }
 
 sub {
-    font-size: .9em;
+    font-size: .6em;
     font-family: sans-serif;
-    color: #999;
+    color: #fafafa;
     margin-left:20px;
 }
 
@@ -39,7 +39,7 @@ h1 {
     line-height: 1.9em;
     color: #fafafa;
     
-    margin-top: -20px;
+    margin-top: -35px;
 }
 
 h2 {
@@ -152,23 +152,22 @@ SIDEBAR STYLE
     left: 0;
     height: 100vh;
     z-index: 999;
-    background: #3FEEE6;
-    color: #fff;
+    background: #FF3900;
+    color: #fafafa;
     transition: all 0.3s;
 }
 
-#sidebar.active {
-    margin-left: -300px;
-}
+
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #3FEEE6;
+    background: #FF3900;
 }
 
 #sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #3FEEE6;
+    padding: 0px;
+    border-bottom: 1px solid #FF3900;
+    
 }
 
 #sidebar ul p {
@@ -182,22 +181,28 @@ SIDEBAR STYLE
     display: block;
 }
 
+/* Why is this only affected the first li a but not the second?
 #sidebar ul li a:hover {
-    color: #55BCC9;
-    background: #fff;
-}
+    color: #fafafa;
+    background: #FF8764;
+} */
 
+
+/* category dropdown box */
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-    color: #fff;
-    background: #55BCC9;
+    color: #fafafa;
+    background: #FF3900;
 }
 
-
+/* location drop down box */
 a[data-toggle="collapse"] {
     position: relative;
+    
+    
 }
 
+/* for the dropdown box icons */
 a[aria-expanded="false"]::before,
 a[aria-expanded="true"]::before {
     content: '\e259';
@@ -206,10 +211,13 @@ a[aria-expanded="true"]::before {
     right: 20px;
     font-family: 'Glyphicons Halflings';
     font-size: 0.6em;
+    
 }
 
+/* icons when the drop down boxes are expanded */
 a[aria-expanded="true"]::before {
     content: '\e260';
+    
 }
 
 
@@ -238,9 +246,15 @@ img {
 
 .get-adv-btn {
     width: 40%;
-    margin-left: 25%;
-    margin-right:35%;
+    margin-left: 21%;
+    margin-right:39%;
     
+    border-radius: 4px;
+    
+}
+
+.btn-custom {
+   background-color: #00ceff; 
 }
 
 
@@ -334,12 +348,26 @@ CONTENT STYLE
     
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: #FF3900;
+    
+    text-align: center;
+ }
+
+
+
 /* ---------------------------------------------------
 MEDIAQUERIES
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
-    
+    .body {
+        background-color: #fafafa;
+    }
     #content {
         width: 100%;
     }
@@ -351,13 +379,41 @@ MEDIAQUERIES
         position: fixed;
         width: 100%;
         max-width: 100vw;
-        max-height: 20vh;
+        max-height: 25vh;
         top: 0;
     }
 
-    .sidebar-header {
-        display: none;
+    #sidebar li {
+        background: #FF3900;
     }
+
+   .sidebar-header {
+        height: 50px;
+        
+    } 
+
+    h1 {
+        font-size: 1.7em;
+    font-weight: 300;
+    line-height: 1.9em;
+    display: inline-block;
+    margin-top: -20px;
+    
+    }
+
+    img {
+        height: 50px;
+        width: 50px;
+        display: inline;
+        padding-bottom: 5px;
+        margin-top: -10px;
+        margin-right: -10px;
+    }
+
+    .input-text {
+        background: #FF3900;
+    }
+    
 
    
 
@@ -377,31 +433,36 @@ MEDIAQUERIES
     }
 
     .form-check {
-        background-color: slategray;
+        background: #FF3900;
         opacity: 60%;
     }
 
     #map {
         position: absolute;
-        height: 85vh;
+        height: 84vh;
         width: 100vw;
-        margin-top: -20px;
+        margin-top: 1px;
         padding: 0px;
         
     }
+
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        background-color: #FF3900;
+        border-top: 10px;
+        border-color: #FF3900;
+        text-align: center;
+     }
 }
 
 @media (min-width: 769px) {
    
-    #getAdventure{
-        /* //this is the bottom button */
-        /* display: none; */
-        /* visibility: hidden;  */
-    }
+    
 
-    #get-adv-btn-2{
-        /* //this is the top button */
-    }
+   
 
     #buttons {
         display: none;

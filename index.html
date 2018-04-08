@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Adventure Planner</title>
     <link rel="icon" type="image/ico" href="assets/img/favicon.ico">
     <!-- import Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
@@ -13,13 +13,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js"></script>
     <!-- Google Maps and Google Maps Places API Import -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSDzgTsHEU_AoRgZ1oyBPhCrM_j9cqpHs&libraries=places"></script>
     <!-- Google Maps Places documentation https://developers.google.com/maps/documentation/javascript/places -->
     <!-- link the local css -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Kirang+Haerang" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -27,16 +28,15 @@
         <!-- Sidebar Holder -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                
-                <img src="assets/img/icon1.PNG" alt="Choose your own adventure" height="150" width="160">
-            <h1>Adventure Planner</h1>
-        </div>
+
+                <img src="assets/img/icon-white-eye.PNG" alt="Choose your own adventure" height="150" width="160">
+                <h1>Adventure Planner</h1>
+            </div>
             <ul class="list-unstyled components">
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Location/ZipCode/Radius</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Location</a>
                     <form class="collapse list-unstyled" id="pageSubmenu">
                         <!-- <label> -->
-
                         <!-- <select name="state" class="state-input" id="state">
                             <option value="" selected="selected">Select a State</option>
                             <option value="AL">Alabama</option>
@@ -92,26 +92,16 @@
                             <option value="WY">Wyoming</option>
                         </select> -->
                         <p class="input-text">
-                            <input type="text" class="city" placeholder="Enter City">
+                           <!-- <input type="text" class="city" placeholder="Enter City"> -->
                             <input type="text" class="zipCode" placeholder="Enter US Zip Code">
                         </p>
                     </form>
                     <!-- </label> -->
                 </li>
-                <li>
-                    
-                    <a href="#pageDietmenu" data-toggle="collapse" aria-expanded="false">Categories</a>
-                    <ul class="collapse list-unstyled" id="Kid-Friendly">
-TEST
-                        <!-- <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label> -->
 
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Categories</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
                             <form class="form-check">
                                 <div class="form-check">
@@ -139,62 +129,27 @@ TEST
                                     </label>
                                 </div>
 
-                                <div class="form-check">
-                                    <label>
-                                        <input type="checkbox" name="check">
-                                        <span class="label-text">Option 05</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <label>
-                                        <input type="checkbox" name="check">
-                                        <span class="label-text">Option 06</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <label>
-                                        <input type="checkbox" name="check">
-                                        <span class="label-text">Option 07</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <label>
-                                        <input type="checkbox" name="check">
-                                        <span class="label-text">Option 08</span>
-                                    </label>
-                                </div>
+
                             </form>
                         </li>
                     </ul>
-                        <li>
-                            <a href="#pageCalmenu" data-toggle="collapse" aria-expanded="false">Concerts</a>
-                            <ul class="collapse list-unstyled" id="pageCalmenu">
-                                <li>
-                                    <!-- <a href="#">
-                                    <div id="calorie" class="collapse">
+                </li>
+            </ul>
+            <br>
+            <div class="get-adv-btn">
+                <button type="button" id="getAdventure" class="btn btn-custom">
+                    <h4>Get my Adventure!</h4>
+                </button>
+            </div>
+            <div class="footer">
 
-                                        <div class="slidecontainer">
-                                            <input type="range" min="1" max="2000" value="800" class="slider" id="myRange">
-                                            <p>Max Calories:
-                                                <span id="calorieSlider"></span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a> -->
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                        </li>
-                    </ul>
-                    <div class="get-adv-btn">
-                        <button type="button" id="getAdventure" class="btn btn-info"><h4>Get my Adventure!</h4></button>
-                    </div>
+                <sub>&copy; Copyright 2018</sub>
+            </div>
         </nav>
     </div>
     <div class="line"></div>
     <div class="results">
-     
+
 
         <!-- DIV FOR RECIPE RESULTS/ETC -->
         <div id="map"></div>
@@ -203,13 +158,10 @@ TEST
             <br> This is going to be the best time.
         </p>
     </div>
-    
 
-    
-    <div class="footer">
-        
-        <sub>&copy; Copyright 2018</sub>
-    </div>
+
+
+
 
     <!-- script for calorie range slider -->
     <!-- <script>
@@ -220,7 +172,7 @@ TEST
             output.innerHTML = this.value;
         }
     </script> -->
-    
+
     <script src="./assets/js/main.js"></script>
 
 </body>
